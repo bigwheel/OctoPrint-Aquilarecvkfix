@@ -11,8 +11,8 @@ class AquilarecvkfixPlugin(octoprint.plugin.OctoPrintPlugin):
     # Recv:  T:199.77 /200.00 (109.50) B:60.3 /60.00 (855.00) @:0 B@:0
     # Recv: k
     def fix(self, comm_instance, line, *args, **kwargs):
-        if line == "k":
-            return "ok"
+        if line == "Recv: k":
+            return "Recv: ok"
         else:
             return line
 
