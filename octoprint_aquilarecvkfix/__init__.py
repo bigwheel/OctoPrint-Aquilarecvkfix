@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import octoprint.plugin
 
 
-class AquilarecvkfixPlugin(ooctoprint.plugin.OctoPrintPlugin):
+class AquilarecvkfixPlugin(octoprint.plugin.OctoPrintPlugin):
     # https://www.reddit.com/r/VoxelabAquila/comments/pj1x7x/a_print_with_octoprint_often_freezes_several/hc4x3hu/?
     # Recv: ok
     # Send: N3988 G1 X87.90 Y95.68 F4800*125
