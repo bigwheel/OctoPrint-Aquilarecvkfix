@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_aquilarecvkfix/templates *
+recursive-include octoprint_aquilarecvkfix/translations *
+recursive-include octoprint_aquilarecvkfix/static *
