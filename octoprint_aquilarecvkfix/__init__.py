@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import, unicode_literals
-
+import re
 import octoprint.plugin
 
 
@@ -11,8 +11,10 @@ class AquilarecvkfixPlugin(octoprint.plugin.OctoPrintPlugin):
     # Recv:  T:199.77 /200.00 (109.50) B:60.3 /60.00 (855.00) @:0 B@:0
     # Recv: k
     def fix(self, comm_instance, line, *args, **kwargs):
-        if line == "Recv: k":
+        if line == "Recv: k":  # for ADVANCED_OK disable
             return "Recv: ok"
+        elif re.search("Recv: k .*", line):  # for ADVANCED_OK enable
+            return re.sub("Recv: k ", "Recv: ok ", line)
         else:
             return line
 
